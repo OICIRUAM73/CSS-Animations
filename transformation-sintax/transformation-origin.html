@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rotate transformation</title>
+<style>
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: white;
+    font-family: Arial;
+  }
+
+  .container {
+    border: 1px solid red;
+  }
+
+  .container:hover .square {
+    transform: rotateZ(-45deg);
+  }
+
+  .square {
+    transform-origin: 50% 50%;
+    transform-origin: top;
+    transform-origin: left;
+    transform-origin: left top;
+    width: 200px;
+    height: 200px;
+    background: #7dc900;
+    margin: 20px;
+    transition: .3s;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="square">
+      Hola mundo
+    </div>
+  </div>
+</body>
+</html>
