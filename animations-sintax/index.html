@@ -34,14 +34,19 @@
     align-items: center;
     justify-content: center;
     animation-duration: 2s;
-    animation-delay: 1s;
+    animation-delay: 0s;
     /*animation-iteration-count: 2;
-    animation-timing-function: linear;
-    animation-timing-function: ease;
     animation-direction: reverse;
     
     animation-fill-mode: forwards; //quedarse con el valor del final*/
     animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    animation-timing-function: ease-in; /* Animacion suave al inicio */
+    animation-timing-function: ease-out; /* Animacion suave al final */
+    animation-timing-function: ease-in-out; /* Animacion lento al inicio y final */
+    animation-timing-function: linear; /* constante*/
+    animation-timing-function: steps(5); /* numero de pasos en el tiempo de duración */
+    animation-timing-function: cubic-bezier(.75, -0.31, .33, 1.4); /* https://cubic-bezier.com/ */
     animation-direction: alternate;
     position: relative;
   }
