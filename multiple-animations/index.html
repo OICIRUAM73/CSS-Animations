@@ -6,7 +6,7 @@
 <style>
   body {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     height: 100vh;
     color: white;
@@ -39,7 +39,7 @@
     animation-direction: reverse;
     
     animation-fill-mode: forwards; //quedarse con el valor del final*/
-    animation-iteration-count: infinite;
+    animation-iteration-count: infinite, 20;
     animation-timing-function: linear, ease-in-out;
     animation-direction: alternate;
     position: relative;
@@ -66,13 +66,34 @@
       transform: translateY(100px) scale(1, .8);
     }
   }
+
+  @keyframes stairs {
+    from {
+      transform: translateY(0);
+    }
+
+    to {
+      transform: translateY(500px);
+    }
+  }
 </style>
 </head>
 <body>
   <div class="container">
-    <div class="square">
+    <div class="square" id="square">
       Hola mundo
     </div>
   </div>
+  <script>
+    const $square = document.getElementById("square");
+    // $square.addEventListener('animationstart', (event) => {
+    // $square.addEventListener('animationiteration', (event) => {
+    $square.addEventListener('animationend', (event) => {
+      if(event.animationName === 'rebound') {
+        $square.style.animationName = 'square stairs';
+        $square.style.animationDuration = '3s';
+      }
+    });
+  </script>
 </body>
 </html>
