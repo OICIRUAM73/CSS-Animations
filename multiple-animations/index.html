@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rotate transformation</title>
+<style>
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    color: white;
+    font-family: Arial;
+  }
+
+  .container {
+    border: 1px solid red;
+    width: 100%;
+  }
+
+  .container:hover .square {
+
+    animation-play-state: paused;
+  }
+
+  .square {
+    width: 200px;
+    height: 200px;
+    background: #7dc900;
+    margin: 20px;
+    border-radius: 50%;
+    animation-name: square, rebound;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation-duration: 3s, .3s;
+    animation-delay: 0s;
+    /*animation-iteration-count: 2;
+    animation-direction: reverse;
+    
+    animation-fill-mode: forwards; //quedarse con el valor del final*/
+    animation-iteration-count: infinite;
+    animation-timing-function: linear, ease-in-out;
+    animation-direction: alternate;
+    position: relative;
+  }
+
+  @keyframes square {
+    0% {
+      /*opacity: 1;*/
+      left: 0;
+    }
+
+    100% {
+      /*opacity: 0;*/
+      left: calc(100% - 240px);
+    }
+  }
+
+  @keyframes rebound {
+    from {
+      transform: translateY(0);
+    }
+
+    to {
+      transform: translateY(100px) scale(1, .8);
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="square">
+      Hola mundo
+    </div>
+  </div>
+</body>
+</html>
